@@ -1,10 +1,18 @@
 class Rover {
-  constructor(){
-    this.position = [0,0]
-    this.orientation = "N"
+  constructor(position, orientation){
+    if (position === undefined) {
+      this.position = [0,0]
+    } else {
+      this.position = position
+    }
+    if (orientation === undefined) {
+      this.orientation = "N"
+    } else {
+      this.orientation = orientation
+    }
   }
   moveForward(){
-    
+    this.position = [0,1]
   }
 }
 
