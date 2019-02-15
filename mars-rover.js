@@ -4,7 +4,11 @@ class Rover {
     this.orientation = orientation === undefined ? "N" : orientation
   }
   moveForward(){
-    this.position = [0,1]
+    if(this.orientation === "N"){
+      this.position[1]++
+    } else if(this.orientation === "S"){
+      this.position[1]--
+    }
   }
 }
 
