@@ -88,6 +88,24 @@ it("turns left facing east", () => {
   const orientation = "E"
   const myRover = new Rover(position, orientation)
   myRover.turn("L")
+  expect(myRover.orientation).toEqual("N")
+  expect(myRover.position).toEqual([0,0])
+})
+
+it("turns left facing west", () => {
+  const position = [0,0]
+  const orientation = "W"
+  const myRover = new Rover(position, orientation)
+  myRover.turn("L")
   expect(myRover.orientation).toEqual("S")
+  expect(myRover.position).toEqual([0,0])
+})
+
+it("turns left facing south", () => {
+  const position = [0,0]
+  const orientation = "S"
+  const myRover = new Rover(position, orientation)
+  myRover.turn("L")
+  expect(myRover.orientation).toEqual("E")
   expect(myRover.position).toEqual([0,0])
 })
