@@ -28,6 +28,14 @@ class Rover {
       this.orientation = "S"
     } else if (this.orientation === "S" && direction === "L") {
       this.orientation = "E"
+    } else if (this.orientation === "N" && direction === "R") {
+      this.orientation = "E"
+    } else if (this.orientation === "E" && direction === "R") {
+      this.orientation = "S"
+    } else if (this.orientation === "W" && direction === "R") {
+      this.orientation = "N"
+    } else if (this.orientation === "S" && direction === "R") {
+      this.orientation = "W"
     }
   }
 }

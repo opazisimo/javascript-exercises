@@ -109,3 +109,37 @@ it("turns left facing south", () => {
   expect(myRover.orientation).toEqual("E")
   expect(myRover.position).toEqual([0,0])
 })
+
+it("turns right facing north", () => {
+  const myRover = new Rover()
+  myRover.turn("R")
+  expect(myRover.orientation).toEqual("E")
+  expect(myRover.position).toEqual([0,0])
+})
+
+it("turns right facing east", () => {
+  const position = [0,0]
+  const orientation = "E"
+  const myRover = new Rover(position, orientation)
+  myRover.turn("R")
+  expect(myRover.orientation).toEqual("S")
+  expect(myRover.position).toEqual([0,0])
+})
+
+it("turns right facing west", () => {
+  const position = [0,0]
+  const orientation = "W"
+  const myRover = new Rover(position, orientation)
+  myRover.turn("R")
+  expect(myRover.orientation).toEqual("N")
+  expect(myRover.position).toEqual([0,0])
+})
+
+it("turns right facing south", () => {
+  const position = [0,0]
+  const orientation = "S"
+  const myRover = new Rover(position, orientation)
+  myRover.turn("R")
+  expect(myRover.orientation).toEqual("W")
+  expect(myRover.position).toEqual([0,0])
+})
