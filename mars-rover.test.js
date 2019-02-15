@@ -58,6 +58,24 @@ it("moves forward from 6,8 facing south", () => {
   expect(myRover.position).toEqual([6,7])
 })
 
+it("moves forward from 78,4 facing west", () => {
+  const position = [78,4]
+  const orientation = "W"
+  const myRover = new Rover(position, orientation)
+  myRover.moveForward()
+  expect(myRover.orientation).toEqual("W")
+  expect(myRover.position).toEqual([77,4])
+})
+
+it("moves forward from 34,67 facing east", () => {
+  const position = [34,67]
+  const orientation = "E"
+  const myRover = new Rover(position, orientation)
+  myRover.moveForward()
+  expect(myRover.orientation).toEqual("E")
+  expect(myRover.position).toEqual([35,67])
+})
+
 it("turns left facing north", () => {
   const myRover = new Rover()
   myRover.turn("L")

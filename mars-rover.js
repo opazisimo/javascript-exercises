@@ -4,10 +4,19 @@ class Rover {
     this.orientation = orientation === undefined ? "N" : orientation
   }
   moveForward() {
-    if (this.orientation === "N") {
-      this.position[1]++
-    } else if (this.orientation === "S") {
-      this.position[1]--
+    switch (this.orientation) {
+      case "N":
+        this.position[1]++
+        break;
+      case "S":
+        this.position[1]--
+        break;
+      case "W":
+        this.position[0]--
+        break;
+      case "E":
+        this.position[0]++
+        break;
     }
   }
   turn(direction) {
