@@ -1,4 +1,5 @@
 class Rover {
+
   constructor(position, orientation) {
     this.position = position === undefined ? [0,0] : position
     this.orientation = orientation === undefined ? "N" : orientation
@@ -20,27 +21,17 @@ class Rover {
     }
   }
   turn(direction) {
-    if (direction === "L") {
-      if (this.orientation === "N") {
-        this.orientation = "W"
-      } else if (this.orientation === "E") {
-        this.orientation = "N"
-      } else if (this.orientation === "W") {
-        this.orientation = "S"
-      } else if (this.orientation === "S") {
-        this.orientation = "E"
-      }
-    } else if (direction === "R") {
-      if (this.orientation === "N") {
-        this.orientation = "E"
-      } else if (this.orientation === "E") {
-        this.orientation = "S"
-      } else if (this.orientation === "W") {
-        this.orientation = "N"
-      } else if (this.orientation === "S") {
-        this.orientation = "W"
-      }
+    const CARDINAL_POINTS = ['N','E','S','W']
+    let destinationIndex = 0
+    let currentOrientationIndex = CARDINAL_POINTS.indexOf(this.orientation)
+    if ( direction === 'R' ) {
+      destinationIndex = currentOrientationIndex + 1
+    } else if ( direction === 'L') {
+      destinationIndex = currentOrientationIndex - 1
     }
+    const finalDestination = (destinationIndex + CARDINAL_POINTS.length) % CARDINAL_POINTS.length
+    this.orientation = CARDINAL_POINTS[finalDestination]
+
   }
 }
 
