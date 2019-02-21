@@ -22,16 +22,10 @@ class Rover {
   }
   turn(direction) {
     const CARDINAL_POINTS = ['N','E','S','W']
-    let destinationIndex = 0
     let currentOrientationIndex = CARDINAL_POINTS.indexOf(this.orientation)
-    if ( direction === 'R' ) {
-      destinationIndex = currentOrientationIndex + 1
-    } else if ( direction === 'L') {
-      destinationIndex = currentOrientationIndex - 1
-    }
-    const finalDestination = (destinationIndex + CARDINAL_POINTS.length) % CARDINAL_POINTS.length
-    this.orientation = CARDINAL_POINTS[finalDestination]
-
+    let destinationIndex = direction === 'R' ? currentOrientationIndex + 1 : currentOrientationIndex - 1
+    const normalizedDestinationIndex = (destinationIndex + CARDINAL_POINTS.length) % CARDINAL_POINTS.length
+    this.orientation = CARDINAL_POINTS[normalizedDestinationIndex]
   }
 }
 
