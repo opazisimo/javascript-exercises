@@ -20,22 +20,26 @@ class Rover {
     }
   }
   turn(direction) {
-    if (this.orientation === "N" && direction === "L") {
-      this.orientation = "W"
-    } else if (this.orientation === "E" && direction === "L") {
-      this.orientation = "N"
-    } else if (this.orientation === "W" && direction === "L") {
-      this.orientation = "S"
-    } else if (this.orientation === "S" && direction === "L") {
-      this.orientation = "E"
-    } else if (this.orientation === "N" && direction === "R") {
-      this.orientation = "E"
-    } else if (this.orientation === "E" && direction === "R") {
-      this.orientation = "S"
-    } else if (this.orientation === "W" && direction === "R") {
-      this.orientation = "N"
-    } else if (this.orientation === "S" && direction === "R") {
-      this.orientation = "W"
+    if (direction === "L") {
+      if (this.orientation === "N") {
+        this.orientation = "W"
+      } else if (this.orientation === "E") {
+        this.orientation = "N"
+      } else if (this.orientation === "W") {
+        this.orientation = "S"
+      } else if (this.orientation === "S") {
+        this.orientation = "E"
+      }
+    } else if (direction === "R") {
+      if (this.orientation === "N") {
+        this.orientation = "E"
+      } else if (this.orientation === "E") {
+        this.orientation = "S"
+      } else if (this.orientation === "W") {
+        this.orientation = "N"
+      } else if (this.orientation === "S") {
+        this.orientation = "W"
+      }
     }
   }
 }
