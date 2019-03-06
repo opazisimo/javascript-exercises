@@ -20,6 +20,22 @@ class Rover {
   getCurrentOrientationIndex(){
     return CARDINAL_POINTS.indexOf(this.orientation)
   }
+  flip(){
+    switch (this.orientation) {
+      case 'N':
+        this.orientation = 'S'
+        break
+      case 'E':
+        this.orientation = 'W'
+        break;
+      case 'S':
+        this.orientation = 'N'
+        break;
+      case 'W':
+        this.orientation = 'E'
+        break;
+    }
+  }
 }
 
 module.exports = Rover

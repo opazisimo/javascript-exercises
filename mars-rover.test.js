@@ -143,3 +143,12 @@ it("turns right facing south", () => {
   expect(myRover.orientation).toEqual("W")
   expect(myRover.position).toEqual([0,0])
 })
+
+it("flips facing north", () => {
+    const orientation = "N"
+    const position = [3,4]
+    const myRover = new Rover(position, orientation)
+    myRover.flip()
+    expect(myRover.orientation).toEqual("S")
+    expect(myRover.position).toEqual([3,4])
+})
